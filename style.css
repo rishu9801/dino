@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.game {
+    width: 100%;
+    margin: auto;
+    font-family: 'Rubik', sans-serif;
+    text-transform: capitalize;
+}
+
+.container {
+  margin: auto;
+  width: 600px;
+  height: 250px;
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  padding-bottom: 2px;
+}
+.score {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 1rem auto;
+}
+.jumpBtn{
+display: none;
+}
+button {
+  width: 80px;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+button:focus-visible{
+    outline: none;
+}
+.dino {
+  width: 50px;
+  height: 50px;
+  background-image: url(dino.png);
+  background-size: 50px 50px;
+  position: relative;
+  top: 150px;
+}
+
+.jump {
+  animation: jump 0.4s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  30% {
+    top: 130px;
+  }
+  50% {
+    top: 80px;
+  }
+  80% {
+    top: 130px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+.cactus {
+  position: relative;
+  width: 20px;
+  min-height: 40px;
+  top: 110px;
+  left: 580px;
+  background-image: url(cactus.png);
+  background-size: 20px 40px;
+}
+.move {
+  animation: move 1.5s infinite linear;
+}
+
+@keyframes move {
+  0% {
+    left: 580px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+@media screen and (max-width: 900px) {
+   .container{
+       width: 100%;
+   }
+   .game{
+    overflow: hidden;
+   }
+   .jumpBtn{
+       display:inline-block;
+   }
+  }
